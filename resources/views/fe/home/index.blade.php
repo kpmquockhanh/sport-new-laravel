@@ -258,16 +258,16 @@
                             <div class="single-post-area mb-30">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img src="img/bg-img/13.jpg" alt="">
+                                    <img src="{{ $news->first()->thumbnail }}" alt="">
 
                                     <!-- Video Duration -->
-                                    <span class="video-duration">05.03</span>
+                                    <span class="video-duration">{{ $news->first()->created_at->format('d.m') }}</span>
                                 </div>
 
                                 <!-- Post Content -->
                                 <div class="post-content">
-                                    <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                    <a href="single-post.html" class="post-title">Full article Prince Charles's 'urgent' global research</a>
+                                    <a href="#" class="post-cata cata-sm cata-dander">News</a>
+                                    <a href="#" class="post-title">{{ $news->first()->title }}</a>
                                     <div class="post-meta d-flex">
                                         <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
@@ -276,53 +276,24 @@
                                 </div>
                             </div>
 
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="img/bg-img/1.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">DC Shoes: gymkhana five; the making of</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 29</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 08</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 23</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="img/bg-img/2.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">Sweet Yummy Chocolatea Tea</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 17</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 33</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 26</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Single Blog Post -->
-                            <div class="single-blog-post d-flex">
-                                <div class="post-thumbnail">
-                                    <img src="img/bg-img/35.jpg" alt="">
-                                </div>
-                                <div class="post-content">
-                                    <a href="single-post.html" class="post-title">How To Make Orange Chicken Recipe?</a>
-                                    <div class="post-meta d-flex justify-content-between">
-                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 11</a>
-                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                        <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 21</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                            @foreach($news as $index => $new)
+                                @if ($index != 0)
+                                    <!-- Single Blog Post -->
+                                        <div class="single-blog-post d-flex">
+                                            <div class="post-thumbnail">
+                                                <img src="{{ $new->thumbnail }}" alt="">
+                                            </div>
+                                            <div class="post-content">
+                                                <a href="#" class="post-title">{{ $new->title }}</a>
+                                                <div class="post-meta d-flex justify-content-between">
+                                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 29</a>
+                                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 08</a>
+                                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 23</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                @endif
+                            @endforeach
                     </div>
                 </div>
             </div>

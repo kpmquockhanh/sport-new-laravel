@@ -45,9 +45,8 @@
                         </div>
                         <div id="breakingNewsTicker" class="ticker">
                             <ul>
-                                <li><a href="single-post.html">10 Things Amazon Echo Can Do</a></li>
-                                <li><a href="single-post.html">Welcome to Colorlib Family.</a></li>
-                                <li><a href="single-post.html">Boys 'doing well' after Thai</a></li>
+                                <li><a href="#">Welcome to Sport news.</a></li>
+                                <li><a href="#">Welcome to Sport news.</a></li>
                             </ul>
                         </div>
                     </div>
