@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 70);
             $table->string('email', 50)->unique();
+            $table->string('ava', 255)->default('/img/default_ava.svg');
             $table->string('password');
             $table->timestamps();
         });

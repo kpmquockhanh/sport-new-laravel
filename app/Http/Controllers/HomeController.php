@@ -29,12 +29,25 @@ class HomeController extends Controller
         $trends = News::getTrending(3);
         $randoms = News::getTrending(4);
         $viewData =[
-            'news' => $news,
+            'news' => $news->load('admin', 'comments'),
             'trends' => $trends,
             'randoms' => $randoms,
         ];
 
 //        dd($news);
         return view('FE.Home.index')->with($viewData);
+    }
+
+    public function getNew(Request $request, $id)
+    {
+        $new = News::with('admin', 'comments')
+            ->findOrFail($id);
+        $viewData =[
+            'new' => $new,
+        ];
+
+        $new->increment('view');
+
+        return view('fe.home.detail')->with($viewData);
     }
 }

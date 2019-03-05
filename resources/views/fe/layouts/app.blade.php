@@ -13,10 +13,10 @@
     <title>Vizew - Blog &amp; Magazine HTML Template</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="icon" href="{{ asset('img/core-img/favicon.ico') }}">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 
 </head>
 
@@ -90,7 +90,7 @@
                 <nav class="classy-navbar justify-content-between" id="vizewNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="index.html" class="nav-brand"><img src="{{ asset('img/core-img/logo.png') }}" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -191,9 +191,9 @@
                         <div class="post-content">
                             <a href="single-post.html" class="post-title">DC Shoes: gymkhana the</a>
                             <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
+                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> {{ $new->comments->count() }}</a>
+                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $new->view }}</a>
+                                {{--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>--}}
                             </div>
                         </div>
                     </div>
@@ -206,9 +206,9 @@
                         <div class="post-content">
                             <a href="single-post.html" class="post-title">Sweet Yummy Chocolatea Tea</a>
                             <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
+                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> {{ $new->comments->count() }}</a>
+                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $new->view }}</a>
+                                {{--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>--}}
                             </div>
                         </div>
                     </div>
@@ -268,15 +268,15 @@
 
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
-<script src="js/jquery/jquery-2.2.4.min.js"></script>
+<script src="{{ asset('js/jquery/jquery-2.2.4.min.js') }}"></script>
 <!-- Popper js -->
-<script src="js/bootstrap/popper.min.js"></script>
+<script src="{{ asset('js/bootstrap/popper.min.js') }}"></script>
 <!-- Bootstrap js -->
-<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
 <!-- All Plugins js -->
-<script src="js/plugins/plugins.js"></script>
+<script src="{{ asset('js/plugins/plugins.js') }}"></script>
 <!-- Active js -->
-<script src="js/active.js"></script>
+<script src="{{ asset('js/active.js') }}"></script>
 </body>
 
 </html>

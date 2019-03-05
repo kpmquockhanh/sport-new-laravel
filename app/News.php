@@ -29,4 +29,14 @@ class News extends Model
             ->take($num)
             ->get();
     }
+
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'new_id');
+    }
 }
