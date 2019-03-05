@@ -21,7 +21,7 @@
                                 </div>
                             @endif
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="{{ old('email') }}">
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" id="password" placeholder="Password" name="password">

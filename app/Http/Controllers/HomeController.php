@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -49,5 +50,17 @@ class HomeController extends Controller
         $new->increment('view');
 
         return view('fe.home.detail')->with($viewData);
+    }
+
+    public function profile($id)
+    {
+        $user = \App\User::query()
+            ->findOrFail($id);
+
+        $viewData = [
+            'user' => $user
+        ];
+
+        return view('fe.profile')->with($viewData);
     }
 }

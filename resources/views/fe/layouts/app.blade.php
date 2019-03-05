@@ -69,11 +69,11 @@
                             </form>
                         </div>
                         @if (\Illuminate\Support\Facades\Auth::check())
-                            <!-- Login -->
-                                <a href="{{ route('logout') }}" class="login-btn"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                            <a href="{{ route('login') }}" class="login-btn"><i class="fa fa-user"></i></a>
+                            <a href="{{ route('logout') }}" class="login-btn"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                         @else
                             <!-- Login -->
-                            <a href="{{ route('login') }}" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            <a href="{{ route('login') }}" class="login-btn"><i class="fa fa-sign-in"></i></a>
                         @endif
                     </div>
                 </div>
@@ -128,7 +128,7 @@
     <div class="container">
         <div class="row">
             <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-xl-4">
                 <div class="footer-widget mb-70">
                     <!-- Logo -->
                     <a href="index.html" class="foo-logo d-block mb-4"><img src="img/core-img/logo2.png" alt=""></a>
@@ -144,7 +144,7 @@
             </div>
 
             <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-xl-4">
                 <div class="footer-widget mb-70">
                     <h6 class="widget-title">Latest Twister</h6>
                     <!-- Twitter Slides -->
@@ -179,45 +179,7 @@
             </div>
 
             <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
-                <div class="footer-widget mb-70">
-                    <h6 class="widget-title">Sport Videos</h6>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post d-flex">
-                        <div class="post-thumbnail">
-                            <img src="img/bg-img/1.jpg" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">DC Shoes: gymkhana the</a>
-                            <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> {{ $new->comments->count() }}</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $new->view }}</a>
-                                {{--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>--}}
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Blog Post -->
-                    <div class="single-blog-post d-flex">
-                        <div class="post-thumbnail">
-                            <img src="img/bg-img/2.jpg" alt="">
-                        </div>
-                        <div class="post-content">
-                            <a href="single-post.html" class="post-title">Sweet Yummy Chocolatea Tea</a>
-                            <div class="post-meta d-flex justify-content-between">
-                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> {{ $new->comments->count() }}</a>
-                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> {{ $new->view }}</a>
-                                {{--<a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>--}}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Footer Widget Area -->
-            <div class="col-12 col-sm-6 col-xl-3">
+            <div class="col-12 col-sm-6 col-xl-4">
                 <div class="footer-widget mb-70">
                     <h6 class="widget-title">Our Address</h6>
                     <!-- Contact Address -->

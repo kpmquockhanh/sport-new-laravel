@@ -18,6 +18,10 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('news/{id}', 'HomeController@getNew')->name('new.detail');
 
+Route::prefix('user')->group(function () {
+    Route::get('/profile/{id}', 'HomeController@profile');
+});
+
 Route::prefix('admin')->group(function () {
     Route::get('/', 'AdminController@index');
 });
