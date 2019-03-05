@@ -19,5 +19,5 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('news/{id}', 'HomeController@getNew')->name('new.detail');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'AdminController@index');
 });

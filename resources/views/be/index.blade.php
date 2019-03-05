@@ -8,18 +8,18 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/components/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('') }}">
+    <link rel="stylesheet" href="{{ asset('backend/components/font-awesome/css/font-awesome.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('backend/components/Ionicons/css/ionicons.min.css') }}">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="{{ asset('backend/components/jvectormap/jquery-jvectormap.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="{{ asset('backend/css/AdminLTE.css') }}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="{{ asset('backend/css/skins/_all-skins.min.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,7 +68,7 @@
                                     <li><!-- start message -->
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                                <img src="{{ asset('backend/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Support Team
@@ -81,7 +81,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="{{ asset('backend/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 AdminLTE Design Team
@@ -93,7 +93,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="{{ asset('backend/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Developers
@@ -105,7 +105,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="{{ asset('backend/img/user3-128x128.jpg') }}" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Sales Department
@@ -117,7 +117,7 @@
                                     <li>
                                         <a href="#">
                                             <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                                                <img src="{{ asset('backend/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
                                             </div>
                                             <h4>
                                                 Reviewers
@@ -254,13 +254,13 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <img src="{{ asset('backend/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
                             <span class="hidden-xs">Alexander Pierce</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="{{ asset('backend/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                                 <p>
                                     Alexander Pierce - Web Developer
@@ -309,7 +309,7 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="{{ asset('backend/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>Alexander Pierce</p>
@@ -797,7 +797,7 @@
                                                 <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="{{ asset('backend/img/user1-128x128.jpg') }}" alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 Is this template really for free? That's unbelievable!
@@ -813,7 +813,7 @@
                                                 <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="{{ asset('backend/img/user3-128x128.jpg') }}" alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 You better believe it!
@@ -829,7 +829,7 @@
                                                 <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="{{ asset('backend/img/user1-128x128.jpg') }}" alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 Working with AdminLTE on a great new app! Wanna join?
@@ -845,7 +845,7 @@
                                                 <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
                                             </div>
                                             <!-- /.direct-chat-info -->
-                                            <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                            <img class="direct-chat-img" src="{{ asset('backend/img/user3-128x128.jpg') }}" alt="message user image">
                                             <!-- /.direct-chat-img -->
                                             <div class="direct-chat-text">
                                                 I would love to.
@@ -862,7 +862,7 @@
                                         <ul class="contacts-list">
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="{{ asset('backend/img/user1-128x128.jpg') }}" alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -877,7 +877,7 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="{{ asset('backend/img/user7-128x128.jpg') }}" alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -892,7 +892,7 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="{{ asset('backend/img/user3-128x128.jpg') }}" alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -907,7 +907,7 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="{{ asset('backend/img/user5-128x128.jpg') }}" alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -922,7 +922,7 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="{{ asset('backend/img/user6-128x128.jpg') }}" alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -937,7 +937,7 @@
                                             <!-- End Contact Item -->
                                             <li>
                                                 <a href="#">
-                                                    <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Image">
+                                                    <img class="contacts-list-img" src="{{ asset('backend/img/user8-128x128.jpg') }}" alt="User Image">
 
                                                     <div class="contacts-list-info">
                                 <span class="contacts-list-name">
@@ -990,42 +990,42 @@
                                 <div class="box-body no-padding">
                                     <ul class="users-list clearfix">
                                         <li>
-                                            <img src="dist/img/user1-128x128.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user1-128x128.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">Alexander Pierce</a>
                                             <span class="users-list-date">Today</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user8-128x128.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user8-128x128.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">Norman</a>
                                             <span class="users-list-date">Yesterday</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user7-128x128.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user7-128x128.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">Jane</a>
                                             <span class="users-list-date">12 Jan</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user6-128x128.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user6-128x128.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">John</a>
                                             <span class="users-list-date">12 Jan</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user2-160x160.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user2-160x160.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">Alexander</a>
                                             <span class="users-list-date">13 Jan</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user5-128x128.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user5-128x128.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">Sarah</a>
                                             <span class="users-list-date">14 Jan</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user4-128x128.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user4-128x128.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">Nora</a>
                                             <span class="users-list-date">15 Jan</span>
                                         </li>
                                         <li>
-                                            <img src="dist/img/user3-128x128.jpg" alt="User Image">
+                                            <img src="{{ asset('backend/img/user3-128x128.jpg') }}" alt="User Image">
                                             <a class="users-list-name" href="#">Nadia</a>
                                             <span class="users-list-date">15 Jan</span>
                                         </li>
@@ -1276,7 +1276,7 @@
                             <ul class="products-list product-list-in-box">
                                 <li class="item">
                                     <div class="product-img">
-                                        <img src="dist/img/default-50x50.gif" alt="Product Image">
+                                        <img src="{{ asset('backend/img/default-50x50.gif') }}" alt="Product Image">
                                     </div>
                                     <div class="product-info">
                                         <a href="javascript:void(0)" class="product-title">Samsung TV
@@ -1289,7 +1289,7 @@
                                 <!-- /.item -->
                                 <li class="item">
                                     <div class="product-img">
-                                        <img src="dist/img/default-50x50.gif" alt="Product Image">
+                                        <img src="{{ asset('backend/img/default-50x50.gif') }}" alt="Product Image">
                                     </div>
                                     <div class="product-info">
                                         <a href="javascript:void(0)" class="product-title">Bicycle
@@ -1302,7 +1302,7 @@
                                 <!-- /.item -->
                                 <li class="item">
                                     <div class="product-img">
-                                        <img src="dist/img/default-50x50.gif" alt="Product Image">
+                                        <img src="{{ asset('backend/img/default-50x50.gif') }}" alt="Product Image">
                                     </div>
                                     <div class="product-info">
                                         <a href="javascript:void(0)" class="product-title">Xbox One <span
@@ -1315,7 +1315,7 @@
                                 <!-- /.item -->
                                 <li class="item">
                                     <div class="product-img">
-                                        <img src="dist/img/default-50x50.gif" alt="Product Image">
+                                        <img src="{{ asset('backend/img/default-50x50.gif') }}" alt="Product Image">
                                     </div>
                                     <div class="product-info">
                                         <a href="javascript:void(0)" class="product-title">PlayStation 4
@@ -1548,25 +1548,24 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="{{ asset('backend/components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="{{ asset('backend/components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="{{ asset('backend/components/fastclick/lib/fastclick.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="{{ asset('backend/js/adminlte.min.js') }}"></script>
 <!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap  -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="{{ asset('backend/components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
 <!-- SlimScroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="{{ asset('backend/components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
 <!-- ChartJS -->
-<script src="bower_components/chart.js/Chart.js"></script>
+<script src="{{ asset('backend/components/chart.js/Chart.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
+<script src="{{ asset('backend/js/pages/dashboard2.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+{{--<script src="{{ asset('backend/js/demo.js') }}"></script>--}}
+<!-- AdminLTE for demo purposes -->
+{{--<script src="dist/js/demo.js"></script>--}}
 </body>
 </html>
