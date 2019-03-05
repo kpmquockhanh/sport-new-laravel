@@ -6,6 +6,7 @@ use App\News;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -52,15 +53,33 @@ class HomeController extends Controller
         return view('fe.home.detail')->with($viewData);
     }
 
-    public function profile($id)
+    public function profile()
     {
-        $user = \App\User::query()
-            ->findOrFail($id);
+        $user = Auth::user();
 
         $viewData = [
             'user' => $user
         ];
 
         return view('fe.profile')->with($viewData);
+    }
+
+    public function updateProfile(Request $request)
+    {
+        Auth::user()->update($this->getUpdateData($request));
+        $request->session()->flash('message', 'Update successful!');
+        return redirect(route('user.profile'));
+    }
+
+    private function getUpdateData(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'string',
+            'password' => 'confirmed'
+        ]);
+        $result = [];
+        if ($request->name) $result['name'] = $request->name;
+        if ($request->password) $result['password'] = bcrypt($request->password);
+        return $result;
     }
 }

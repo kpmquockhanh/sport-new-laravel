@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -13,7 +15,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $viewData = [
+//            'auth' => Auth::user(),
+            'users' => User::query()->paginate(10),
+        ];
+
+        return view('be.users.index')->with($viewData);
     }
 
     /**
@@ -56,7 +63,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $viewData = [
+            'user' => User::query()->findOrFail($id),
+        ];
+
+        return view('be.users.edit')->with($viewData);
     }
 
     /**
@@ -68,17 +79,36 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        User::query()->findOrFail($id)->update($this->getUpdateData($request));
+        $request->session()->flash('message', 'Update successful!');
+        return redirect(route('users.edit', ['id' => $id]));
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @throws \Exception
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+
+        return response()->json([
+            'status' => true
+        ], 201);
+    }
+
+    private function getUpdateData(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'email',
+            'name' => 'string',
+            'password' => 'confirmed'
+        ]);
+        $result = [];
+        if ($request->name) $result['name'] = $request->name;
+        if ($request->password) $result['password'] = bcrypt($request->password);
+        if ($request->email) $result['email'] = $request->email;
+        return $result;
     }
 }

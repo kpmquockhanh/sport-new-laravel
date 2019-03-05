@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Vizew - Blog &amp; Magazine HTML Template</title>
+    <title>@yield('title', env('APP_NAME'))</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('img/core-img/favicon.ico') }}">
@@ -69,11 +69,12 @@
                             </form>
                         </div>
                         @if (\Illuminate\Support\Facades\Auth::check())
-                            <a href="{{ route('login') }}" class="login-btn"><i class="fa fa-user"></i></a>
+                            <a href="{{ route('user.profile') }}" class="login-btn"><i class="fa fa-user"></i></a>
                             <a href="{{ route('logout') }}" class="login-btn"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
                         @else
                             <!-- Login -->
                             <a href="{{ route('login') }}" class="login-btn"><i class="fa fa-sign-in"></i></a>
+                            <a href="{{ route('register') }}" class="login-btn"><i class="fa fa-key"></i></a>
                         @endif
                     </div>
                 </div>
@@ -107,8 +108,8 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li><a href="archive-list.html">News</a></li>
+                                <li class="active"><a href="/">Home</a></li>
+                                <li><a href="/">News</a></li>
                                 {{--<li><a href="contact.html">Contact</a></li>--}}
                             </ul>
                         </div>
