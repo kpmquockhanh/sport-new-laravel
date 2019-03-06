@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\Vote;
 use http\Client\Curl\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -81,5 +82,17 @@ class HomeController extends Controller
         if ($request->name) $result['name'] = $request->name;
         if ($request->password) $result['password'] = bcrypt($request->password);
         return $result;
+    }
+
+    public function voteNew($id)
+    {
+        Vote::query()->create([
+            'user_id' => Auth::id(),
+            'new_id' => $id
+        ]);
+
+        return response()->json([
+            'status' => true
+        ]);
     }
 }

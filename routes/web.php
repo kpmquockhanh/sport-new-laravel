@@ -21,6 +21,7 @@ Route::get('detail/{id}', 'HomeController@getNew')->name('new.detail');
 Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile', 'HomeController@profile')->name('user.profile');
     Route::post('/update', 'HomeController@updateProfile')->name('user.update');
+    Route::post('/vote/{id}', 'HomeController@voteNew')->name('user.vote');
 });
 
 Route::prefix('admin')->group(function () {
@@ -31,6 +32,9 @@ Route::prefix('admin')->group(function () {
     Route::post('/register', 'AuthAdmin\LoginController@register');
     Route::get('/logout', 'AuthAdmin\LoginController@logout')->name('admin.logout');
     Route::post('/logout', 'AuthAdmin\LoginController@logout');
+});
+
+Route::prefix('admin')->middleware('auth:admin')->group(function () {
 
     Route::resource('users', 'UserController')->except(['show', 'create', 'store']);
 
@@ -39,7 +43,6 @@ Route::prefix('admin')->group(function () {
     Route::resource('votes', 'VoteController')->except(['show', 'edit', 'update', 'create', 'store', 'destroy']);
 
     Route::resource('news', 'NewController');
-
 
     Route::resource('operators', 'AdminController');
 });

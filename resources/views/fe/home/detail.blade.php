@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="post-details-thumb mb-50" style="display: flex; justify-content: center">
+                    <div class="post-details-thumb mb-50" style="display: flex; justify-content: center; max-height: 500px; width: unset;">
                         <img src="{{ asset($new->thumbnail) }}" alt="">
                     </div>
                 </div>
@@ -20,7 +20,7 @@
 
                             <!-- Post Content -->
                             <div class="post-content mt-0">
-                                <a href="#" class="post-cata cata-sm cata-danger">New</a>
+                                <a href="#" class="post-cata cata-sm cata-success" id="vote-this-post" data-id="{{ $new->id }}"><i class="fa fa-thumbs-up"></i></a>
                                 <a href="single-post.html" class="post-title mb-2">{{ $new->title }}</a>
 
                                 <div class="d-flex justify-content-between mb-30">

@@ -35,7 +35,7 @@
                                     </div>
                                 @endif
                                 <!-- text input -->
-                                <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                                <div style="display: flex; justify-content: center; margin-bottom: 10px; overflow: hidden">
                                     <input type="file" name="ava" id="thumbnail" hidden accept="image/*">
                                     <div style="position: relative; width: 200px; height: 200px;">
                                         <img src="{{ $user->ava }}" alt="" class="preview-img">

@@ -22,7 +22,7 @@
                                     <!-- Post Content -->
                                         <div class="post-content">
                                             <a href="#" class="post-cata">News</a>
-                                            <a href="single-post.html" class="post-title">{{ $new->title }}</a>
+                                            <a href="{{ route('new.detail', ['id' => $new->id]) }}" class="post-title">{{ $new->title }}</a>
                                             <div class="post-meta d-flex">
                                                 <a href=""><span><i class="fa fa-comments-o" aria-hidden="true"></i> {{ $new->comments->count() }}</span></a>
                                                 <a href=""><span><i class="fa fa-eye" aria-hidden="true"></i> {{ $new->view }}</span></a>
@@ -217,7 +217,7 @@
                                             <!-- Post Content -->
                                             <div class="post-content mt-0">
                                                 <a href="#" class="post-cata cata-sm cata-success">News</a>
-                                                <a href="single-post.html" class="post-title mb-2">{{ $new->title }}</a>
+                                                <a href="{{ route('new.detail', ['id' => $new->id]) }}" class="post-title mb-2">{{ $new->title }}</a>
                                                 <div class="post-meta d-flex align-items-center mb-2">
                                                     <a href="#" class="post-author">By {{ $new->admin->name }}</a>
                                                     <i class="fa fa-circle" aria-hidden="true"></i>
@@ -290,7 +290,7 @@
                                                 <img src="{{ $new->thumbnail }}" alt="">
                                             </div>
                                             <div class="post-content">
-                                                <a href="#" class="post-title">{{ $new->title }}</a>
+                                                <a href="{{ route('new.detail', ['id' => $new->id]) }}" class="post-title">{{ $new->title }}</a>
                                                 <div class="post-meta d-flex justify-content-between">
                                                     <span><i class="fa fa-comments-o" aria-hidden="true"></i> {{ $new->comments->count() }}</span>
                                                     <span><i class="fa fa-eye" aria-hidden="true"></i> {{ $new->view }}</span>
