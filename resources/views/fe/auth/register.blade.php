@@ -32,13 +32,7 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="RePassword" name="password_confirmation">
                             </div>
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="remember">
-                                    <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn vizew-btn w-100 mt-30">Login</button>
+                            <button type="submit" class="btn vizew-btn w-100 mt-30">Register</button>
                         </form>
                     </div>
                 </div>

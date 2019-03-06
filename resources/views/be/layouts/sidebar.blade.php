@@ -45,21 +45,49 @@
                 </a>
             </li>
 
-            {{--<li class="treeview">--}}
-                {{--<a href="#">--}}
-                    {{--<i class="fa fa-pie-chart"></i>--}}
-                    {{--<span>Charts</span>--}}
+            <li>
+                <a href="{{ route('comments.index') }}">
+                    <i class="fa fa-comment"></i>
+                    <span>Comments</span>
                     {{--<span class="pull-right-container">--}}
-              {{--<i class="fa fa-angle-left pull-right"></i>--}}
-            {{--</span>--}}
-                {{--</a>--}}
-                {{--<ul class="treeview-menu" style="display: none;">--}}
-                    {{--<li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Users</a></li>--}}
-                    {{--<li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i></a></li>--}}
-                    {{--<li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>--}}
-                    {{--<li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>--}}
-                {{--</ul>--}}
-            {{--</li>--}}
+                        {{--<small class="label pull-right bg-primary text-secondary">New</small>--}}
+                    {{--</span>--}}
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('votes.index') }}">
+                    <i class="fa fa-heart"></i>
+                    <span>Votes</span>
+                    {{--<span class="pull-right-container">--}}
+                    {{--<small class="label pull-right bg-primary text-secondary">New</small>--}}
+                    {{--</span>--}}
+                </a>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-newspaper-o"></i>
+                    <span>News</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu" style="display: none;">
+                    <li><a href="{{ route('news.index') }}"><i class="fa fa-circle-o"></i> List</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="{{ route('operators.index') }}">
+                    <i class="fa fa-gear"></i>
+                    <span>Admins</span>
+                    <span class="pull-right-container">
+                    <small class="label pull-right bg-primary text-secondary">HOT</small>
+                    </span>
+                </a>
+            </li>
+
         </ul>
     </section>
     <!-- /.sidebar -->

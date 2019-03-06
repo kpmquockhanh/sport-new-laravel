@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
+
+    protected $fillable = [
+        'title', 'content', 'thumbnail', 'admin_id'
+    ];
     public static function getNews()
     {
         return self::query()

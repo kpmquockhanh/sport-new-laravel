@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use App\User;
+use App\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -79,7 +82,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        User::query()->findOrFail($id)->update($this->getUpdateData($request));
+        $user = User::query()->findOrFail($id);
+
+        $updateData = $this->getUpdateData($request);
+
+        $nameImg = $this->storeImg($request);
+
+        if ($nameImg){
+            $updateData['ava'] = '/uploads/'.$nameImg;
+            Storage::disk('upload')->delete(str_replace('/uploads/', '', $user->ava));
+        }
+
+        $user->update($updateData);
+
         $request->session()->flash('message', 'Update successful!');
         return redirect(route('users.edit', ['id' => $id]));
     }
@@ -91,6 +106,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+        Comment::query()->where('user_id', $id)->delete();
+        Vote::query()->where('user_id', $id)->delete();
         User::destroy($id);
 
         return response()->json([
@@ -98,14 +115,30 @@ class UserController extends Controller
         ], 201);
     }
 
+    private function storeImg(Request $request)
+    {
+        if ($request->file('ava'))
+        {
+            $name = time().'_'.Auth::guard('admin')->id().'.'.$request->file('ava')->getClientOriginalExtension();
+
+            Storage::disk('upload')->put($name, \Illuminate\Support\Facades\File::get($request->file('ava')));
+
+            return $name;
+        }
+
+        return null;
+    }
+
     private function getUpdateData(Request $request)
     {
         $this->validate($request, [
-            'email' => 'email',
-            'name' => 'string',
+            'email' => 'required|email',
+            'name' => 'required|string',
             'password' => 'confirmed'
         ]);
+
         $result = [];
+
         if ($request->name) $result['name'] = $request->name;
         if ($request->password) $result['password'] = bcrypt($request->password);
         if ($request->email) $result['email'] = $request->email;

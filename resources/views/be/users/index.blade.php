@@ -62,18 +62,20 @@
                                             <tbody>
 
                                             @foreach ($users as $user)
-                                                <tr role="row" class="d-flex">
+                                                <tr role="row" class="d-flex" data-id="{{ $user->id }}">
                                                     <td>{{ $user->id }}</td>
                                                     <td>{{ $user->name }}</td>
                                                     <td>{{ $user->email }}</td>
                                                     <td>
-                                                        <img src="{{ asset($user->ava) }}" alt="" style="height: 20%;">
+                                                        <div style="width: 30%; margin: auto;">
+                                                            <img src="{{ asset($user->ava) }}" alt="" style="height: 100%;">
+                                                        </div>
                                                     </td>
                                                     <td>{{ $user->created_at->diffForHumans() }}</td>
                                                     <td>{{ $user->updated_at->diffForHumans() }}</td>
                                                     <td>
                                                         <a href="{{ route('users.edit', ['id' => $user->id]) }}" class="btn-xs btn-success" style="padding: 5px 10px;"><i class="fa fa-pencil"></i></a>
-                                                        <a href="#" data-id="{{ $user->id }}" class="btn-xs btn-danger btn-remove-user" style="padding: 5px 10px;"><i class="fa fa-trash"></i></a>
+                                                        <a href="#" class="btn-xs btn-danger btn-remove-user" style="padding: 5px 10px;"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                             @endforeach

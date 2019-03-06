@@ -17,10 +17,11 @@
     <link rel="stylesheet" href="{{ asset('backend/components/jvectormap/jquery-jvectormap.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('backend/css/AdminLTE.css') }}">
+    <link href="{{ asset('backend/css/custom.css') }}" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('backend/css/skins/_all-skins.min.css') }}">
-
+    @yield('style')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -69,6 +70,6 @@
     })
 </script>
 
-
+@yield('script')
 </body>
 </html>

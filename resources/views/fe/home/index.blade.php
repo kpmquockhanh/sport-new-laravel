@@ -223,7 +223,7 @@
                                                     <i class="fa fa-circle" aria-hidden="true"></i>
                                                     <a href="#" class="post-date">{{ $new->created_at->format('M d, Y') }}</a>
                                                 </div>
-                                                <p class="mb-2">{{ \Illuminate\Support\Str::limit($new->content) }}</p>
+                                                <p class="mb-2">{{ \Illuminate\Support\Str::limit(html_entity_decode(strip_tags($new->content))) }}</p>
                                                 <div class="post-meta d-flex">
                                                     <a href="#"><span><i class="fa fa-comments-o" aria-hidden="true"></i> {{ $new->comments->count() }}</span></a>
                                                     <a href="#"><span><i class="fa fa-eye" aria-hidden="true"></i> {{ $new->view }}</span></a>

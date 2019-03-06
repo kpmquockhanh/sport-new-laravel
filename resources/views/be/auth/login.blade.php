@@ -1,4 +1,4 @@
-@extends('be.layouts.app')
+@extends('be.layouts.app_authenticate')
 @section('body-class', 'hold-transition login-page')
 @section('title', 'Login admin')
 @section('content')

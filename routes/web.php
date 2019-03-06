@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('news/{id}', 'HomeController@getNew')->name('new.detail');
+Route::get('detail/{id}', 'HomeController@getNew')->name('new.detail');
 
 Route::prefix('user')->middleware('auth')->group(function () {
     Route::get('/profile', 'HomeController@profile')->name('user.profile');
@@ -24,7 +24,7 @@ Route::prefix('user')->middleware('auth')->group(function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', 'AdminController@index');
+    Route::get('/', 'DashboardController@index');
     Route::get('/login', 'AuthAdmin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'AuthAdmin\LoginController@login');
     Route::get('/register', 'AuthAdmin\LoginController@showRegistrationForm')->name('admin.register');
@@ -32,5 +32,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/logout', 'AuthAdmin\LoginController@logout')->name('admin.logout');
     Route::post('/logout', 'AuthAdmin\LoginController@logout');
 
-    Route::resource('users', 'UserController');
+    Route::resource('users', 'UserController')->except(['show', 'create', 'store']);
+
+    Route::resource('comments', 'CommentController')->except(['show', 'edit', 'update', 'create', 'store']);
+
+    Route::resource('votes', 'VoteController')->except(['show', 'edit', 'update', 'create', 'store', 'destroy']);
+
+    Route::resource('news', 'NewController');
+
+
+    Route::resource('operators', 'AdminController');
 });

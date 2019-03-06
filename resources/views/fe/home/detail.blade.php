@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="post-details-thumb mb-50">
+                    <div class="post-details-thumb mb-50" style="display: flex; justify-content: center">
                         <img src="{{ asset($new->thumbnail) }}" alt="">
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
 
-                            {{ $new->content }}
+                            {!! $new->content !!}
 
                             <!-- Post Author -->
                             <div class="vizew-post-author d-flex align-items-center py-5">
@@ -48,11 +48,11 @@
                                     <a href="#" class="author-name">{{ $new->admin->name }}</a>
                                     <p>{{ $new->admin->desc }}</p>
                                     <div class="post-author-social-info">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                                        <a href="//fb.com/kpmquockhanh"><i class="fa fa-facebook"></i></a>
+                                        {{--<a href="#"><i class="fa fa-twitter"></i></a>--}}
+                                        {{--<a href="#"><i class="fa fa-pinterest"></i></a>--}}
+                                        {{--<a href="#"><i class="fa fa-linkedin"></i></a>--}}
+                                        {{--<a href="#"><i class="fa fa-dribbble"></i></a>--}}
                                     </div>
                                 </div>
                             </div>

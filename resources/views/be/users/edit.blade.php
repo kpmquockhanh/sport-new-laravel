@@ -22,16 +22,27 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
-                            <form role="form" action="{{ route('users.update', ['id' => $user->id]) }}" method="post">
+                            <form role="form" action="{{ route('users.update', ['id' => $user->id]) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @if (\Illuminate\Support\Facades\Session::get('message'))
                                     <div class="form-group">
                                         <div class="alert alert-success">{{ \Illuminate\Support\Facades\Session::get('message') }}</div>
                                     </div>
                                 @endif
+                                @if ($errors->first())
+                                    <div class="form-group">
+                                        <div class="alert alert-danger">{{ $errors->first() }}</div>
+                                    </div>
+                                @endif
                                 <!-- text input -->
-                                <div style="display: flex; justify-content: center">
-                                    <img src="{{ asset($user->ava) }}" alt="" style="width: 100%;margin: 20px;">
+                                <div style="display: flex; justify-content: center; margin-bottom: 10px;">
+                                    <input type="file" name="ava" id="thumbnail" hidden accept="image/*">
+                                    <div style="position: relative; width: 200px; height: 200px;">
+                                        <img src="{{ $user->ava }}" alt="" class="preview-img">
+                                        <div class="hover-preview">
+                                            <a href="#" id="triggerUpload"><i class="fa fa-upload"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                                     <input type="text" value="PUT" name="_method" hidden>
                                 <div class="form-group">
@@ -43,8 +54,8 @@
                                     <input type="email" class="form-control" name="email" value="{{ $user->email }}">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="*****" name="password">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="*****" name="password">
                                 </div>
                                 <div class="form-group">
                                     <label>Repassword</label>
